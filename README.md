@@ -20,7 +20,15 @@ Fortunately, I've been learning how to program smart contracts with Solidity! In
 
 Navigate to the [Remix IDE](https://remix.ethereum.org) and create a new contract called `AssociateProfitSplitter.sol` using the starter code shown above.
 
+![](screenshots/new_contract.png)
+
+
 While developing and testing the contract, I used the [Ganache](https://www.trufflesuite.com/ganache) development chain, and pointed MetaMask to `localhost:8545`.
+
+![](screenshots/ganache.png)
+
+![](screenshots/metamask_8545.png)
+
 
 ### Level One: The `AssociateProfitSplitter` Contract
 
@@ -62,19 +70,33 @@ Next, create the following functions:
 
 * Create a fallback function using `function() external payable`, and call the `deposit` function from within it. This will ensure that the logic in `deposit` executes if Ether is sent directly to the contract. This is important to prevent Ether from being locked in the contract since we don't have a `withdraw` function in this use-case.
 
+
+![](screenshots/code.png)
+
+
 #### Test the contract
 
 In the `Deploy` tab in Remix, deploy the contract to your local Ganache chain by connecting to `Injected Web3` and ensuring MetaMask is pointed to `localhost:8545`.
 
+
+![](screenshots/code.png)
+
+
 You will need to fill in the constructor parameters with your designated `employee` addresses.
+
+
+![](screenshots/addresses.png)
+
 
 Test the `deposit` function by sending various values. Keep an eye on the `employee` balances as you send different amounts of Ether to the contract and ensure the logic is executing properly.
 
+
+![](screenshots/deposit.png)
+
+
+![](screenshots/balance_change.png)
+
+
 ![Remix Testing](Images/remix-test.png)
 
-## Submission
-
-Create a `README.md` that explains how each of the contracts work and what the motivation for each of the contracts is. Also, please provide screenshots to illustrate the functionality (e.g. how you send transactions, how the transferred amount is then distributed by each of the contracts, and how the timelock functionality can be tested with the `fastforward` function). Alternatively, you can also record your interactions with the contract as a gif (e.g. https://www.screentogif.com/)
-
-
-Upload the `README.md` to a Github repository and provide the testnet address for others to interact with the contract.
+![](screenshots/remit_test.png)
